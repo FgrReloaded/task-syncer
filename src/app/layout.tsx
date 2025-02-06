@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Poppins } from "next/font/google"
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 
 export const metadata: Metadata = {
   title: "Task Syncer",
@@ -13,9 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body style={poppins.style}>
         {children}
       </body>
-    </html>
+    </html >
   );
 }
